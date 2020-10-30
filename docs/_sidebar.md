@@ -1,0 +1,2 @@
+* [Home](/)
+* [Dictionary](dictionary.md)
