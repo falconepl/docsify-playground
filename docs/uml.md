@@ -30,7 +30,7 @@ card "Users bounded context" {
     cc -- expDate
   }
   storage "aggregate" as userProfAR {
-    rectangle "User profile" as prof
+    rectangle "User profile" as prof [[$dictionary#user]]
     rectangle "Password" as pw
     rectangle "Home address" as addr
     collections "Credit cards" as cards
