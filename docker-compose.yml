@@ -1,0 +1,8 @@
+version: '3.3'
+
+services:
+  plantuml:
+    image: plantuml/plantuml-server:jetty-v1.2020.19
+    container_name: plantuml-server
+    ports:
+      - 8080:8080

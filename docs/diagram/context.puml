@@ -1,0 +1,90 @@
+' Custom definitions & styling for DDD
+
+!$LIGHT_BLACK = "#333333"
+
+!$DARK_GRAY = "#808080"
+!$DARKER_GRAY = "#C2C2C2"
+!$GRAY = "#E3E3E3"
+!$LIGHTER_GRAY = "#EBEBEB"
+!$LIGHT_GRAY = "#F7F7F7"
+
+!$BLUE = "#0B87DA"
+!$LIGHT_BLUE = "#D9EFFF"
+
+!$VIOLET = "#9370DB"
+!$LIGHT_VIOLET = "#E4E4FF"
+
+
+!procedure $context($l_name)
+  rectangle "\n$l_name" <<context>>
+!endprocedure
+
+!procedure $aggregate()
+  rectangle "aggregate" <<aggregate>>
+!endprocedure
+
+!procedure $entity($l_name)
+  rectangle "$l_name" <<entity>>
+!endprocedure
+
+!procedure $entities($l_name)
+  collections "$l_name" <<entities>>
+!endprocedure
+
+!procedure $value_object($l_name)
+  rectangle "$l_name" <<value_object>>
+!endprocedure
+
+
+skinparam sequence {
+  ArrowColor $DARK_GRAY
+}
+
+skinparam rectangle<<context>> {
+  BackgroundColor $LIGHT_GRAY
+  BorderColor $LIGHT_GRAY
+  FontSize 14
+  FontColor $LIGHT_BLACK
+  FontStyle normal
+  Shadowing true
+}
+
+skinparam rectangle<<aggregate>> {
+  BackgroundColor $LIGHTER_GRAY
+  BorderColor $DARKER_GRAY
+  BorderThickness 1
+  FontColor $DARK_GRAY
+  FontStyle italic
+  RoundCorner 15
+}
+
+skinparam rectangle<<entity>> {
+  BackgroundColor $LIGHT_BLUE
+  BorderColor $BLUE
+  BorderThickness 1
+  RoundCorner 5
+}
+
+skinparam rectangle<<entities>> {
+  BackgroundColor $LIGHT_BLUE
+  BorderColor $BLUE
+  BorderThickness 1
+  RoundCorner 5
+}
+
+skinparam rectangle<<value_object>> {
+  BackgroundColor $LIGHT_VIOLET
+  BorderColor $VIOLET
+  BorderThickness 1
+  RoundCorner 35
+}
+
+skinparam LegendBackgroundColor $LIGHT_GRAY
+skinparam LegendBorderColor $LIGHT_GRAY
+skinparam LegendFontColor $LIGHT_BLACK
+
+
+legend bottom left
+<$LIGHT_GRAY,$DARKER_GRAY>|<back:$LIGHT_BLUE><font color=$LIGHT_BLUE>__</font></back>| entity |
+|<back:$LIGHT_VIOLET><font color=$LIGHT_VIOLET>__</font></back>| value object |
+endlegend
